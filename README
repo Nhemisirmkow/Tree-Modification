@@ -1,0 +1,25 @@
+Testerka do programu Modyfikacje Drzew.
+
+W folderze należy umieścić plik z rozwiązaniem iSet.ml!
+
+Treść zadania znajduje się w Tree Modification [Ocaml, Polish]
+
+Komendy:
+$ make_test # - zwraca liczbę błędnych przykładowych testów (sprawdzonych ręcznie) znajdujących się w iSet_test.ml
+$ make_random # - testuje program na testach randomowych, losowo generowanych, dopóki nie wyjdzie błąd
+
+Generator oraz sprawdzaczka jest własnością Artura Jamro.
+
+Ponadto program zawiera własne asercje i wyrzuca błędy w momencie złego użycia funkcji.
+Jest to rodzaj samokontroli, by program nie wykonywał niezaplanowanych operacji.
+
+Program został również sprawdzony na testach z dużymi przedziałami, np poprzez test:
+let s = add (min_int, max_int) empty;;
+below min_int s;; (= 1)
+below max_int s;; (= max_int)
+below (min_int + 1) s;; (= 2)
+
+Dodatkowo zostały wykonane testy odpowiedniego łączenia przedziałów dla małych przypadków: tworzymy drzewo pełne, o jednoelementowych wierzchołkach od 0 do 31. Program ściąga całe drzewo do jednego wierzchołka (prawidłowo).
+
+Marcin Michorzewski,
+16.12.2015 00:30
